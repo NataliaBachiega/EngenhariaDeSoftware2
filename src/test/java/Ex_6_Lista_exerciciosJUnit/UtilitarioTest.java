@@ -26,7 +26,8 @@ class UtilitarioTest {
     @Test
     void listaVazia(){
 
-        var estudantes = new ArrayList<Estudante>();
+
+        var estudantes = new ArrayList<Estudante>(); // Lista vazia
         var e = assertThrows(IllegalArgumentException.class, () -> utilitario.definirConceito(estudantes));
         assertEquals("lista vazia de estudantes", e.getMessage());
 

@@ -30,8 +30,6 @@ class EmissarioTest {
     }
     @Test
     void semUsuariosNulo(){
-        //Usuario usuarios;
-        //usuarios = new ArrayList<Usuario>();
 
         when(usuarioDAOMock.getAllUsuarios()).thenReturn(null);
 
@@ -44,12 +42,11 @@ class EmissarioTest {
 
     @Test
     void semUsuariosListaVazia(){
-        //Usuario usuarios;
-        //usuarios = new ArrayList<Usuario>();
 
-        when(usuarioDAOMock.getAllUsuarios()).thenReturn(null);
+        when(usuarioDAOMock.getAllUsuarios()).thenReturn(new ArrayList<>());
 
         var nomes = new ArrayList<String>();
+        nomes.add("José");
 
         assertEquals("nao ha usuarios", emissario.enviarPara(nomes));
     }
